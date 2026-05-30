@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:padding="8dp"
+    android:layoutDirection="rtl" android:gravity="center_vertical">
+    <TextView android:id="@+id/tvLogTime"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textSize="10sp" android:textColor="@color/text_secondary"
+        android:fontFamily="monospace" android:layout_marginEnd="8dp"/>
+    <TextView android:id="@+id/tvLogMsg"
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:textSize="12sp"/>
+</LinearLayout>
