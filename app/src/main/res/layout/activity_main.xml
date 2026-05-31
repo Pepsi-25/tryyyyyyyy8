@@ -13,13 +13,8 @@
         android:padding="14dp">
 
         <!-- Header -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="12dp">
-
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
             <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="مراقب الشبكة" android:textSize="22sp" android:textStyle="bold"
@@ -28,142 +23,106 @@
                     android:layout_height="wrap_content" android:text="جاري التحديث..."
                     android:textSize="11sp" android:textColor="@color/text_secondary"/>
             </LinearLayout>
-
-            <Button android:id="@+id/btnRefresh"
-                android:layout_width="40dp" android:layout_height="40dp"
-                android:text="↻" android:textSize="18sp"
-                android:backgroundTint="@color/card_bg"
-                android:textColor="@color/accent"
-                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            <Button android:id="@+id/btnRefresh" android:layout_width="40dp" android:layout_height="40dp"
+                android:text="↻" android:textSize="20sp" android:backgroundTint="@color/card_bg"
+                android:textColor="@color/accent" style="@style/Widget.MaterialComponents.Button.TextButton"/>
         </LinearLayout>
 
         <!-- Status Card -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="14dp" app:cardElevation="0dp"
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" app:cardCornerRadius="14dp" app:cardElevation="0dp"
             app:cardBackgroundColor="@color/card_bg">
-
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:orientation="vertical" android:padding="14dp">
-
-                <!-- Status row -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="horizontal" android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
                     <View android:id="@+id/ivDot" android:layout_width="12dp" android:layout_height="12dp"
                         android:background="@drawable/dot_green" android:layout_marginEnd="8dp"/>
                     <TextView android:id="@+id/tvStatus" android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:text="جاري الفحص..."
                         android:textSize="16sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
                 </LinearLayout>
-
-                <!-- 3 info boxes -->
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical"
-                        android:background="@drawable/box_bg" android:padding="10dp" android:layout_marginEnd="6dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:orientation="vertical" android:background="@drawable/box_bg" android:padding="10dp" android:layout_marginEnd="6dp">
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                             android:text="نوع الاتصال" android:textSize="10sp" android:textColor="@color/text_secondary"/>
-                        <TextView android:id="@+id/tvConnType" android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:text="--"
-                            android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+                        <TextView android:id="@+id/tvConnType" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="--" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
                     </LinearLayout>
-
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical"
-                        android:background="@drawable/box_bg" android:padding="10dp" android:layout_marginEnd="6dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:orientation="vertical" android:background="@drawable/box_bg" android:padding="10dp" android:layout_marginEnd="6dp">
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                             android:text="الإشارة" android:textSize="10sp" android:textColor="@color/text_secondary"/>
-                        <TextView android:id="@+id/tvSignal" android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:text="--"
-                            android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+                        <TextView android:id="@+id/tvSignal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="--" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
                     </LinearLayout>
-
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical"
-                        android:background="@drawable/box_bg" android:padding="10dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:orientation="vertical" android:background="@drawable/box_bg" android:padding="10dp">
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                             android:text="وقت الاتصال" android:textSize="10sp" android:textColor="@color/text_secondary"/>
-                        <TextView android:id="@+id/tvUptime" android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:text="00:00:00"
-                            android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary"
-                            android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tvUptime" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="00:00:00" android:textSize="12sp" android:textStyle="bold"
+                            android:textColor="@color/text_primary" android:fontFamily="monospace"/>
                     </LinearLayout>
-
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Permission needed -->
-        <LinearLayout android:id="@+id/layoutPermission"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:visibility="gone"
-            android:background="@drawable/box_bg" android:padding="16dp"
-            android:layout_marginBottom="10dp">
-
+        <!-- Permission -->
+        <LinearLayout android:id="@+id/layoutPermission" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone"
+            android:background="@drawable/box_bg" android:padding="16dp" android:layout_marginBottom="10dp">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="⚠️ محتاج صلاحية عشان يشوف التطبيقات"
-                android:textSize="15sp" android:textStyle="bold" android:textColor="@color/warning"
-                android:layout_marginBottom="6dp"/>
+                android:text="⚠️ محتاج صلاحية عشان يشوف كل التطبيقات"
+                android:textSize="15sp" android:textStyle="bold" android:textColor="@color/warning" android:layout_marginBottom="6dp"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="اضغط الزر، دور على التطبيق في القائمة، وفعّله"
-                android:textSize="13sp" android:textColor="@color/text_secondary"
-                android:layout_marginBottom="10dp"/>
-            <Button android:id="@+id/btnPermission"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text="⚙️ منح الصلاحية الآن"
-                android:backgroundTint="@color/warning" android:textColor="@color/white"/>
+                android:textSize="13sp" android:textColor="@color/text_secondary" android:layout_marginBottom="10dp"/>
+            <Button android:id="@+id/btnPermission" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="⚙️ منح الصلاحية الآن" android:backgroundTint="@color/warning" android:textColor="@color/white"/>
         </LinearLayout>
 
-        <!-- Apps section -->
-        <LinearLayout android:id="@+id/layoutAppSection"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:visibility="gone">
+        <!-- Apps Section -->
+        <LinearLayout android:id="@+id/layoutAppSection" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
 
-            <!-- Period buttons -->
+            <!-- Period buttons: الجلسة / اليوم / أسبوع / شهر -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <Button android:id="@+id/btnSession" android:layout_width="0dp" android:layout_height="36dp"
+                    android:layout_weight="1" android:text="الجلسة" android:textSize="12sp" android:alpha="0.45"
+                    android:backgroundTint="@color/accent" android:textColor="@color/white" android:layout_marginEnd="4dp"
+                    style="@style/Widget.MaterialComponents.Button"/>
                 <Button android:id="@+id/btnToday" android:layout_width="0dp" android:layout_height="36dp"
-                    android:layout_weight="1" android:text="اليوم" android:textSize="13sp"
-                    android:backgroundTint="@color/accent" android:textColor="@color/white"
-                    android:layout_marginEnd="6dp" style="@style/Widget.MaterialComponents.Button"/>
+                    android:layout_weight="1" android:text="اليوم" android:textSize="12sp"
+                    android:backgroundTint="@color/accent" android:textColor="@color/white" android:layout_marginEnd="4dp"
+                    style="@style/Widget.MaterialComponents.Button"/>
                 <Button android:id="@+id/btnWeek" android:layout_width="0dp" android:layout_height="36dp"
-                    android:layout_weight="1" android:text="أسبوع" android:textSize="13sp"
-                    android:backgroundTint="@color/accent" android:textColor="@color/white" android:alpha="0.5"
-                    android:layout_marginEnd="6dp" style="@style/Widget.MaterialComponents.Button"/>
+                    android:layout_weight="1" android:text="أسبوع" android:textSize="12sp" android:alpha="0.45"
+                    android:backgroundTint="@color/accent" android:textColor="@color/white" android:layout_marginEnd="4dp"
+                    style="@style/Widget.MaterialComponents.Button"/>
                 <Button android:id="@+id/btnMonth" android:layout_width="0dp" android:layout_height="36dp"
-                    android:layout_weight="1" android:text="شهر" android:textSize="13sp"
-                    android:backgroundTint="@color/accent" android:textColor="@color/white" android:alpha="0.5"
+                    android:layout_weight="1" android:text="شهر" android:textSize="12sp" android:alpha="0.45"
+                    android:backgroundTint="@color/accent" android:textColor="@color/white"
                     style="@style/Widget.MaterialComponents.Button"/>
             </LinearLayout>
 
-            <TextView android:id="@+id/tvAppsTitle"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="التطبيقات" android:textSize="13sp" android:textStyle="bold"
+            <TextView android:id="@+id/tvAppsTitle" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="كل التطبيقات" android:textSize="13sp" android:textStyle="bold"
                 android:textColor="@color/text_secondary" android:layout_marginBottom="4dp"/>
 
-            <TextView android:id="@+id/tvAppsCount"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="" android:textSize="12sp" android:textColor="@color/text_secondary"
-                android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/tvAppsCount" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="" android:textSize="12sp" android:textColor="@color/text_secondary" android:layout_marginBottom="8dp"/>
 
-            <ProgressBar android:id="@+id/progressApps"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_gravity="center" android:visibility="gone"
-                android:layout_marginBottom="8dp"/>
+            <ProgressBar android:id="@+id/progressApps" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:visibility="gone" android:layout_marginBottom="8dp"/>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:cardCornerRadius="14dp" app:cardElevation="0dp"
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" app:cardCornerRadius="14dp" app:cardElevation="0dp"
                 app:cardBackgroundColor="@color/card_bg">
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvApps"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:padding="6dp"/>
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvApps"
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="6dp"/>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
@@ -173,15 +132,11 @@
             android:text="سجل الأحداث" android:textSize="13sp" android:textStyle="bold"
             android:textColor="@color/text_secondary" android:layout_marginBottom="6dp"/>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="14dp" app:cardElevation="0dp"
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" app:cardCornerRadius="14dp" app:cardElevation="0dp"
             app:cardBackgroundColor="@color/card_bg">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvLog"
-                android:layout_width="match_parent" android:layout_height="250dp"
-                android:padding="6dp"/>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvLog"
+                android:layout_width="match_parent" android:layout_height="300dp" android:padding="6dp"/>
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
