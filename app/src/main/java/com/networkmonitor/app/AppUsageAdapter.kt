@@ -12,6 +12,8 @@ data class AppUsageInfo(
     val name: String,
     val packageName: String,
     val totalBytes: Long,
+    val rxBytes: Long,
+    val txBytes: Long,
     val icon: Drawable?,
     val isSystem: Boolean = false
 )
@@ -23,23 +25,29 @@ class AppUsageAdapter(private val items: List<AppUsageInfo>) :
         val icon: ImageView = v.findViewById(R.id.ivAppIcon)
         val name: TextView = v.findViewById(R.id.tvAppName)
         val pkg: TextView = v.findViewById(R.id.tvAppPkg)
-        val usage: TextView = v.findViewById(R.id.tvAppUsage)
+        val download: TextView = v.findViewById(R.id.tvDownload)
+        val upload: TextView = v.findViewById(R.id.tvUpload)
+        val total: TextView = v.findViewById(R.id.tvAppUsage)
         val bar: View = v.findViewById(R.id.viewBar)
         val rank: TextView = v.findViewById(R.id.tvRank)
         val type: TextView = v.findViewById(R.id.tvAppType)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH =
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         VH(LayoutInflater.from(parent.context).inflate(R.layout.item_app, parent, false))
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         val item = items[position]
         val maxBytes = items.maxOfOrNull { it.totalBytes } ?: 1L
 
-        holder.icon.setImageDrawable(item.icon ?: holder.itemView.context.getDrawable(android.R.drawable.sym_def_app_icon))
+        holder.icon.setImageDrawable(
+            item.icon ?: holder.itemView.context.getDrawable(android.R.drawable.sym_def_app_icon)
+        )
         holder.name.text = item.name
         holder.pkg.text = item.packageName
-        holder.usage.text = formatBytes(item.totalBytes)
+        holder.total.text = formatBytes(item.totalBytes)
+        holder.download.text = "⬇ ${formatBytes(item.rxBytes)}"
+        holder.upload.text = "⬆ ${formatBytes(item.txBytes)}"
         holder.rank.text = "#${position + 1}"
         holder.type.text = if (item.isSystem) "نظام" else "مستخدم"
         holder.type.setTextColor(
@@ -48,7 +56,7 @@ class AppUsageAdapter(private val items: List<AppUsageInfo>) :
             )
         )
 
-        val pct = (item.totalBytes.toFloat() / maxBytes.toFloat())
+        val pct = item.totalBytes.toFloat() / maxBytes.toFloat()
         holder.bar.post {
             val parent = holder.bar.parent as? View ?: return@post
             val w = (parent.width * pct).toInt().coerceAtLeast(8)
